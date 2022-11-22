@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BestCarService</title>
+
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- FONTAWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- internal css -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Arvo", serif;
+      }
+      a {
+        color: #000;
+        list-style: none;
+        text-decoration: none;
+      }
+      .navbar {
+        z-index: 3;
+      }
+      .home {
+        background: #cdf0ea;
+      }
+      .card {
+        background: #cdf0ea;
+      }
+      .pricing {
+        background: #cdf0ea;
+      }
+      .footer p {
+        color: rgb(95, 94, 94);
+      }
+      .footer a {
+        color: rgb(95, 94, 94);
+      }
+      .footer a:hover {
+        color: rgb(166, 163, 163);
+      }
+      .footer li {
+        color: rgb(95, 94, 94);
+      }
+      #btn {
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        background-color: #3b4249;
+        color: #fff;
+        padding: 10px;
+        z-index: 99;
+        cursor: pointer;
+        transition-duration: 0.4s;
+        border-radius: 60px;
+        /* display: none; */
+      }
+      #btn:hover {
+        background-color: #fff;
+        color: #3b4249;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- SECTION A HEADER & BANNER -->
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark position-fixed w-100">
+      <div class="container">
+        <a class="navbar-brand" href="#">BestCarService</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          id="navbarSupportedContent"
+          style="margin-left: 20%"
+        >
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#service">SERVICE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">ABOUT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pricing">PRICING</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">CONTACT</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <button
+              class="btn btn-outline-light mx-2 rounded-pill"
+              type="submit"
+            >
+              Log in
+            </button>
+            <button class="btn btn-light rounded-pill" type="submit">
+              Signup
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- section home -->
+    <section class="text-dark p-5 text-center text-sm-start home" id="home">
+      <div class="container py-5">
+        <div class="d-sm-flex align-item-center justify-content-between py-5">
+          <div class="row">
+            <div class="col-md-6">
+              <h1 class="my-4">Make a car checkup in your Service</h1>
+              <p class="my-4 fw-normal fs-6">
+                By joining BestCarService member, you can easily book services
+                only through...
+              </p>
+              <button
+                class="btn btn-dark"
+                id="btnJumbotron"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                More
+              </button>
+            </div>
+            <div class="col-md-6">
+              <div
+                id="carouselExampleCaptions"
+                class="carousel slide"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-indicators">
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                  ></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="img/car.png" class="d-block w-100" alt="..." />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/car4.png" class="d-block w-100" alt="..." />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/car5.png" class="d-block w-100" alt="..." />
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Modal home section-->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">BestCarService</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Make a car checkup in your Service By joining BestCarService
+              member, you can easily book services only through.the application
+              or website. So, you can save time and don't have to worry about
+              service costs that suddenly swell while at the workshop.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION B PRODUCT FEATURES 1 & 2 -->
+    <!-- service -->
+    <section class="p-3 text-center bg-dark" id="service">
+      <div class="container">
+        <div class="">
+          <h1 class="my-5 text-light">-- Our Service --</h1>
+          <div class="col-md">
+            <div class="card p-2 mb-3 border-dark border-3">
+              <div class="card-body text-center">
+                <div class="h1 mb-3">
+                  <i class="fa fa-car-crash"></i>
+                </div>
+                <h3 class="card-title">Car Service</h3>
+                <p class="card-text">
+                  Car service with us is the best solution, because we are
+                  trusted by several members
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="card p-2 mb-3 border-dark border-3">
+              <div class="card-body text-center">
+                <div class="h1 mb-3">
+                  <i class="fa fa-car-on"></i>
+                </div>
+                <h3 class="card-title">Car Repair</h3>
+                <p class="card-text">
+                  We have repaired many cars and the results are quite
+                  satisfying several customers
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="card p-2 mb-3 border-dark border-3">
+              <div class="card-body text-center">
+                <div class="h1 mb-3">
+                  <i class="fa fa-car-rear"></i>
+                </div>
+                <h3 class="card-title">Car Wash</h3>
+                <p class="card-text">
+                  Some customers give reviews that after the car is washed here
+                  they are quite satisfied
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="card p-2 border-dark border-3">
+              <div class="card-body text-center">
+                <div class="h1 mb-3">
+                  <i class="fa fa-person"></i>
+                </div>
+                <h3 class="card-title">Member</h3>
+                <p class="card-text">
+                  You will get several advantages after registering as a member
+                  that other customers don't get
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- client -->
+    <section class="p-3 client bg-dark" id="client">
+      <div class="container py-3">
+        <div class="row text-center g-4">
+          <div class="col-md">
+            <div class="card text-dark p-2">
+              <div class="card-body text-center">
+                <div class="h1 mb-3">
+                  <i class="fa fa-car-crash"></i>
+                </div>
+                <h3 class="card-title">Car Service</h3>
+                <p class="card-text">12k</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="card text-dark p-2">
+              <div class="card-body text-center">
+                <div class="h1 mb-3">
+                  <i class="fa fa-car-on"></i>
+                </div>
+                <h3 class="card-title">Car Repair</h3>
+                <p class="card-text">12k</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="card text-dark p-2">
+              <div class="card-body text-center">
+                <div class="h1 mb-3">
+                  <i class="fa fa-car-rear"></i>
+                </div>
+                <h3 class="card-title">Car Wash</h3>
+                <p class="card-text">12k</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="card text-dark p-2">
+              <div class="card-body text-center">
+                <div class="h1 mb-3">
+                  <i class="fa fa-person"></i>
+                </div>
+                <h3 class="card-title">Member</h3>
+                <p class="card-text">12k</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION C ABOUT & PRICING -->
+    <!-- about -->
+    <section class="p-5" id="about" style="background-color: #cdf0ea">
+      <div class="container py-5">
+        <h1 class="my-5 text-center">-- About Us --</h1>
+        <div class="row justify-content-between align-items-center">
+          <div class="col-md">
+            <a href=""
+              ><img
+                src="img/car2.png"
+                class="img-fluid"
+                alt=""
+                style="transform: rotate(-1, 1)"
+                width="800px"
+            /></a>
+          </div>
+          <div class="col-md">
+            <h2>BestCarService</h2>
+            <p>
+              BestCarService is a car service booking application that makes it
+              easy for you to find services such as oil changes, tire changes,
+              tune-ups, and car washes.
+            </p>
+            <a href="" class="btn btn-dark">Read More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- pricing -->
+    <section
+      class="p-5 pricing bg-dark"
+      id="pricing"
+      style="background-color: #cdf0ea"
+    >
+      <div class="container py-5">
+        <div class="row text-center g-4">
+          <h1 class="text-center text-light">-- Our Pricing --</h1>
+          <p class="text-light">
+            we provide the best price for each package and the quality is
+            guaranteed. the package consists of standard, professional, premium.
+            choose freely according to your wishes
+          </p>
+          <div class="col-md">
+            <div class="card p-2" style="background-color: #cdf0ea">
+              <div class="card-body text-center">
+                <h4 class="card-title">Standard</h4>
+                <h2 class="card-text">Rp. 500.000</h2>
+                <p><i class="fa fa-car-rear"></i> Car Wash</p>
+                <p><i class="fa fa-car-on"></i> Car Repair</p>
+                <p><i class="fa fa-car-crash"></i> <s> Car Service</s></p>
+                <p><i class="fa fa-gear"></i> <s> Maintenance</s></p>
+                <a
+                  href=""
+                  class="btn btn-outline-dark"
+                  data-bs-toggle="modal"
+                  data-bs-target="#buymodal"
+                  >Buy</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="card p-2" style="background-color: #cdf0ea">
+              <div class="card-body text-center">
+                <h4 class="card-title">Professional</h4>
+                <h2 class="card-text">Rp. 1.000.000</h2>
+                <p><i class="fa fa-car-rear"></i> Car Wash</p>
+                <p><i class="fa fa-car-on"></i> Car Repair</p>
+                <p><i class="fa fa-car-crash"></i> Car Service</p>
+                <p><i class="fa fa-gear"></i> <s> Maintenance</s></p>
+                <a
+                  href=""
+                  class="btn btn-outline-dark"
+                  data-bs-toggle="modal"
+                  data-bs-target="#buymodal"
+                  >Buy</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="card p-2" style="background-color: #cdf0ea">
+              <div class="card-body text-center">
+                <h4 class="card-title">Premium</h4>
+                <h2 class="card-text">Rp. 1.500.000</h2>
+                <p><i class="fa fa-car-rear"></i> Car Wash</p>
+                <p><i class="fa fa-car-on"></i> Car Repair</p>
+                <p><i class="fa fa-car-crash"></i> Car Service</p>
+                <p><i class="fa fa-gear"></i> Maintenance</p>
+                <a
+                  href=""
+                  class="btn btn-outline-dark"
+                  data-bs-toggle="modal"
+                  data-bs-target="#buymodal"
+                  >Buy</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- modal pricing section -->
+    <div
+      class="modal fade"
+      id="buymodal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Buy</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form class="row g-3">
+              <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Name</label>
+                <input type="text" class="form-control" id="inputEmail4" />
+              </div>
+              <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputPassword4" />
+              </div>
+              <div class="col-12">
+                <label for="inputAddress" class="form-label">Address</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputAddress"
+                  placeholder="1234 Main St"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="inputCity" class="form-label">City</label>
+                <input type="text" class="form-control" id="inputCity" />
+              </div>
+              <div class="col-md-6">
+                <label for="inputState" class="form-label">State</label>
+                <select id="inputState" class="form-select">
+                  <option selected>Choose...</option>
+                  <option>...</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-dark">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION D CONTACT & FOOTER -->
+    <!-- contact -->
+    <section class="p-5" id="contact" style="background-color: #cdf0ea">
+      <div class="container py-5">
+        <h1 class="my-4 text-center">-- Contact Us --</h1>
+        <div class="row justify-content-between align-items-center">
+          <div class="col-md">
+            <div class="row">
+              <div class="col-md">
+                <h5 class="text-muted">Mobile Number</h5>
+                <p class="text-muted">081234567897653</p>
+              </div>
+              <div class="col-md">
+                <h5 class="text-muted">Email Address</h5>
+                <p class="text-muted">bestcarservice@service.com</p>
+              </div>
+            </div>
+            <h4 class="mb-3">Make An Appointment</h4>
+            <div class="row mb-3">
+              <div class="col-sm">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputemail"
+                  placeholder="Your Name"
+                />
+              </div>
+              <div class="col-sm">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="inputemail"
+                  placeholder="Your Email"
+                />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-sm">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="inputemail"
+                  placeholder="Phone"
+                />
+              </div>
+              <div class="col-sm">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputemail"
+                  placeholder="Car Model & Year"
+                />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-sm">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputemail"
+                  placeholder="Your Message"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <a href="" class="btn btn-dark">Send Message</a>
+            </div>
+          </div>
+          <div class="col-md">
+            <a href=""><img src="img/car3.png" class="img-fluid" alt="" /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer
+      id="contact"
+      class="bg-dark text-white page-footer p-5 text-md-left footer"
+    >
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mt-2">
+            <h5>BestCarService</h5>
+            <p class="text">
+              BestCarService is a car service booking application
+            </p>
+            <a href="#" class="text"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="text"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="text"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="text"><i class="fa-solid fa-map"></i></a>
+          </div>
+          <div class="col-lg-3 col-md-6 mt-2">
+            <h5>Services</h5>
+            <li><a href="#" class="text">Car Service</a></li>
+            <li><a href="#" class="text">Car Repair</a></li>
+            <li><a href="#" class="text">Car Wash</a></li>
+            <li><a href="#" class="text">Car Maintenance</a></li>
+          </div>
+          <div class="col-lg-3 col-md-6 mt-2">
+            <h5>Page Links</h5>
+            <li><a class="text" href="#client">Our Client</a></li>
+            <li><a class="text" href="#service">Service</a></li>
+            <li><a class="text" href="#about">About Us</a></li>
+            <li><a class="text" href="#pricing">Our Pricing</a></li>
+            <li><a class="text" href="#contact">Contact Us</a></li>
+          </div>
+          <div class="col-lg-3 col-md-6 mt-2">
+            <h5>Location</h5>
+            <li class="text" style="list-style: none">
+              <i class="fa-solid fa-location-dot"></i>
+              Indonesia 99,Kalimantan Jawa Sumatera
+            </li>
+            <li class="text" style="list-style: none">
+              <i class="fa-solid fa-phone"></i> 08123456689128
+            </li>
+            <li class="text" style="list-style: none">
+              <i class="fa-solid fa-envelope"></i>
+              bestcarservice@service.com
+            </li>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <footer class="p-3 text-center" style="background-color: #cdf0ea">
+      <div class="container">
+        <p class="mb-0">Copyright &copy; 2022 kelompokstupen</p>
+      </div>
+    </footer>
+    <a href="" id="btn"><i class="fa-solid fa-arrow-up"></i></a>
+
+    <!-- BOOTSTRAP JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const btn = document.getElementById("btn");
+
+      btn.addEventListener("click", () => {
+        window.scrollTo(0, 0);
+      });
+    </script>
+  </body>
+</html>
